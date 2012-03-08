@@ -15,7 +15,8 @@ formatClassName = (filename) ->
   filename.split('_').map(capitalize).join('')
 
 module.exports = class JavaScriptCompiler
-  compilerType: 'javascript'
+  brunchPlugin: yes
+  type: 'javascript'
   extension: 'js'
   generators:
     backbone: do ->
