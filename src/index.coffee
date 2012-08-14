@@ -1,20 +1,5 @@
 fs = require('fs')
 _path = require('path')
-# Example
-# 
-#   capitalize 'test'
-#   # => 'Test'
-#
-capitalize = (string) ->
-  (string[0] or '').toUpperCase() + string[1..]
-
-# Example
-# 
-#   formatClassName 'twitter_users'
-#   # => 'TwitterUsers'
-#
-formatClassName = (filename) ->
-  filename.split('_').map(capitalize).join('')
 
 mkdir = (path) ->
   dirs = path.split(/[\/\\]/g)
@@ -41,6 +26,27 @@ module.exports = class JavaScriptCompiler
 
   constructor: (@config) ->    
     null
+
+  lint: (data, path, callback) ->
+    try
+      lint = @config.files.javascripts.lint
+      if lint == true or (lint instanceof RegExp and lint.test(path))
+        jslint = require('jslint')
+        if not jslint(data)
+          output = []
+          formatError = (error) ->
+            if not error
+              return '(more)'
+            else
+              return "#{error.reason} #{error.id || ''} at line #{error.line}, column #{error.character}" +
+                if error.evidence then "\n\n  #{error.evidence}\n" else "\n" 
+          output.push(formatError(error)) for error in jslint.errors
+          output.unshift('\n')
+          output.push('\n')
+          throw new Error(output.join('\n'))
+      callback null, data
+    catch error
+      callback error
 
   compile: (data, path, callback) ->
     try
