@@ -17,9 +17,10 @@ describe('Plugin', function() {
     var content = 'var a = 6;';
     var expected = 'var a = 6;';
 
-    plugin.compile(content, 'file.js', function(error, data) {
+    plugin.compile({data: content, path: 'file.js'}, function(error, result) {
+      data = result.data;
       expect(error).not.to.be.ok;
-      expect(data).to.equal(expected)
+      expect(data).to.equal(expected);
       done();
     });
   });
