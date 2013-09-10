@@ -1,3 +1,6 @@
+# javascript-brunch 1.7.0 (9 September 2013)
+* Utilize new plugin API to improve memory efficiency.
+
 # javascript-brunch 1.6.0 (22 June 2013)
 * Improved installation.
 
