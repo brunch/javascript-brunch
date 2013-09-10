@@ -6,5 +6,5 @@ module.exports = class JavaScriptCompiler
   constructor: (@config) ->
     null
 
-  compile: (data, path, callback) ->
-    callback null, data
+  compile: (params, callback) ->
+    callback null, params
