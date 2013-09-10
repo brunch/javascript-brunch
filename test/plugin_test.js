@@ -18,7 +18,7 @@ describe('Plugin', function() {
     var expected = 'var a = 6;';
 
     plugin.compile({data: content, path: 'file.js'}, function(error, result) {
-      data = result.data;
+      var data = result.data;
       expect(error).not.to.be.ok;
       expect(data).to.equal(expected);
       done();
