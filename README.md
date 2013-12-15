@@ -1,6 +1,9 @@
 ## javascript-brunch
-Adds JavaScript support to
-[brunch](http://brunch.io).
+Adds JavaScript support to [brunch](http://brunch.io).
+
+It is mandatory plugin.
+
+It also does JS source code validation.
 
 ## Usage
 Install the plugin via npm with `npm install --save javascript-brunch`.
@@ -11,6 +14,10 @@ Or, do manual install:
   Pick a plugin version that corresponds to your minor (y) brunch version.
 * If you want to use git version of plugin, add
 `"javascript-brunch": "git+ssh://git@github.com:brunch/javascript-brunch.git"`.
+
+## Options
+
+`config.plugins.javascript.validate` (default: `true`) — enables source code validation with Esprima.
 
 ## License
 

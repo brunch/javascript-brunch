@@ -30,5 +30,13 @@ describe('Plugin', function() {
       expect(error).to.be.an.instanceof(Error);
       done();
     });
-  })
+  });
+
+  it('should not validate JS syntax with an option', function(done) {
+    plugin = new Plugin({plugins: {javascript: {validate: false}}});
+    plugin.compile({data: 'var a =;', path: 'file.js'}, function(error, result) {
+      expect(error).to.equal(null);
+      done();
+    });
+  });
 });

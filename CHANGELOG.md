@@ -1,3 +1,6 @@
+# javascript-brunch 1.7.1 (15 December 2013)
+* The plugin now validates JavaScript syntax. Can be disabled in config.
+
 # javascript-brunch 1.7.0 (9 September 2013)
 * Utilize new plugin API to improve memory efficiency.
 
