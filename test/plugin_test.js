@@ -24,4 +24,11 @@ describe('Plugin', function() {
       done();
     });
   });
+
+  it('should validate JS syntax', function(done) {
+    plugin.compile({data: 'var a =;', path: 'file.js'}, function(error, result) {
+      expect(error).to.be.an.instanceof(Error);
+      done();
+    });
+  })
 });

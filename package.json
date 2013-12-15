@@ -10,12 +10,13 @@
   },
   "main": "./lib/index",
   "scripts": {
-    "prepublish": "rm -rf lib && coffee --bare --output lib/ src/",
     "test": "node_modules/.bin/mocha --require test/common.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "esprima": "~1.0.4"
+  },
   "devDependencies": {
-    "mocha": "1.11.0",
-    "chai": "1.7.0"
+    "mocha": "1.15.1",
+    "chai": "1.8.1"
   }
 }
