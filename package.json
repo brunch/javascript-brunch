@@ -8,9 +8,8 @@
     "type": "git",
     "url": "git@github.com:brunch/javascript-brunch.git"
   },
-  "main": "./lib/index",
   "scripts": {
-    "test": "node_modules/.bin/mocha --require test/common.js"
+    "test": "node_modules/.bin/mocha"
   },
   "dependencies": {
     "esprima": "~1.0.4"
