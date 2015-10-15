@@ -1,3 +1,6 @@
+# javascript-brunch 1.8.0 (15 October 2015)
+* Update esprima to ^2.6.0, adding ES6 support
+
 # javascript-brunch 1.7.1 (15 December 2013)
 * The plugin now validates JavaScript syntax. Can be disabled in config.
 
