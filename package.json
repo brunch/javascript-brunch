@@ -4,6 +4,7 @@
   "description": "Adds JavaScript support to brunch.",
   "author": "Paul Miller (http://paulmillr.com/)",
   "homepage": "https://github.com/brunch/javascript-brunch",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:brunch/javascript-brunch.git"
