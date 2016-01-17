@@ -20,16 +20,15 @@ describe('Plugin', function() {
     var content = 'var a = 6;';
     var expected = 'var a = 6;';
 
-    plugin.compile({data: content, path: 'file.js'}, function(error, result) {
+    plugin.compile({data: content, path: 'file.js'}).then(result => {
       var data = result.data;
-      expect(error).not.to.be.ok;
       expect(data).to.equal(expected);
       done();
-    });
+    }, error => expect(error).not.to.be.ok);
   });
 
   it('should validate JS syntax', function(done) {
-    plugin.compile({data: 'var a =;', path: 'file.js'}, function(error, result) {
+    plugin.compile({data: 'var a =;', path: 'file.js'}).then(null, error => {
       expect(error).to.be.an.instanceof(Error);
       done();
     });
@@ -37,9 +36,6 @@ describe('Plugin', function() {
 
   it('should not validate JS syntax with an option', function(done) {
     plugin = new Plugin({plugins: {javascript: {validate: false}}});
-    plugin.compile({data: 'var a =;', path: 'file.js'}, function(error, result) {
-      expect(error).to.equal(null);
-      done();
-    });
+    plugin.compile({data: 'var a =;', path: 'file.js'}).then(() => done(), error => expect(error).not.to.be.ok);
   });
 });
