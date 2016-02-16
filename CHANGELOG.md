@@ -1,3 +1,6 @@
+# javascript-brunch 2.0.0 (Jan 29, 2016)
+* Updated source code & API. The plugin would now only work with Brunch 2.2 and higher.
+
 # javascript-brunch 1.8.0 (15 October 2015)
 * Update esprima to ^2.6.0, adding ES6 support
 
