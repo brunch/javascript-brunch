@@ -36,5 +36,11 @@ describe(Plugin.name, () => {
     plugin = new Plugin({plugins: {javascript: {validate: false}}});
     return plugin.compile({data: 'var a =;'});
   });
+
+  it('should not validate syntax of transpiled files', () => {
+    const file = {data: 'var a =;', map: {}};
+    return plugin.compile(file).then(result => {
+      expect(result).to.equal(file);
+    });
   });
 });
