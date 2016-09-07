@@ -10,7 +10,7 @@
     "url": "git@github.com:brunch/javascript-brunch.git"
   },
   "scripts": {
-    "test": "node_modules/.bin/eslint index.js && node_modules/.bin/mocha"
+    "test": "eslint index.js && eslint --env mocha test.js && mocha"
   },
   "dependencies": {
     "esprima": "~3.0.0"
