@@ -3,10 +3,9 @@
 const esprima = require('esprima');
 
 class JavaScriptCompiler {
-  constructor(brunchCfg) {
-    this.config = brunchCfg && brunchCfg.plugins && brunchCfg.plugins.javascript || {};
-    this.validate = this.config.validate;
-    if (this.validate == null) this.validate = true;
+  constructor(config) {
+    const js = config.plugins.javascript || {};
+    this.validate = 'validate' in js ? js.validate : true;
   }
 
   compile(params) {
