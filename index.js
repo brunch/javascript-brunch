@@ -3,23 +3,22 @@
 const esprima = require('esprima');
 
 class JavaScriptCompiler {
-  constructor(brunchCfg) {
-    this.config = brunchCfg && brunchCfg.plugins && brunchCfg.plugins.javascript || {};
-    this.validate = this.config.validate;
-    if (this.validate == null) this.validate = true;
+  constructor(config) {
+    const js = config.plugins.javascript || {};
+    this.validate = 'validate' in js ? js.validate : true;
   }
 
-  compile(params) {
-    if (this.validate) {
+  compile(file) {
+    if (this.validate && !file.map) {
       try {
-        const errors = esprima.parse(params.data, {tolerant: true}).errors.map(error => error.message);
-        if (errors.length) return Promise.reject(errors);
+        const errors = esprima.parse(file.data, {tolerant: true});
+        if (errors.length) throw errors.map(error => error.message);
       } catch (error) {
         return Promise.reject(error);
       }
     }
 
-    return Promise.resolve(params);
+    return Promise.resolve(file);
   }
 }
 
