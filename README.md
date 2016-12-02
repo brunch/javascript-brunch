@@ -6,7 +6,7 @@ It is mandatory plugin.
 It also does JS source code validation.
 
 ## Usage
-Install the plugin via npm with `npm install --save javascript-brunch`.
+Install the plugin via npm with `npm install --save-dev javascript-brunch`.
 
 Or, do manual install:
 
