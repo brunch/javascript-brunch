@@ -1,11 +1,13 @@
-## javascript-brunch
-Adds JavaScript support to [brunch](http://brunch.io).
+> ## 🚧 This Plugin Is Deprecated 🚧
 
-It is mandatory plugin.
+> This plugin is deprecated in favor of built-in possibilities of [Brunch], which can handle JavaScript automatically. For code validation use [eslint-brunch] or [jshint-brunch].
 
-It also does JS source code validation.
+# javascript-brunch
+
+Adds JavaScript support to [brunch]. It is mandatory plugin. It also does JS source code validation.
 
 ## Usage
+
 Install the plugin via npm with `npm install --save-dev javascript-brunch`.
 
 Or, do manual install:
@@ -23,7 +25,7 @@ Or, do manual install:
 
 The MIT License (MIT)
 
-Copyright (c) 2012-2013 Paul Miller (http://paulmillr.com)
+Copyright (c) 2012-2017 Paul Miller (http://paulmillr.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -42,3 +44,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+<!-- References -->
+
+[brunch]: http://brunch.io
+[eslint-brunch]: https://www.npmjs.com/package/eslint-brunch
+[jshint-brunch]: https://www.npmjs.com/package/jshint-brunch
