@@ -1,10 +1,10 @@
 > ## 🚧 This Plugin Is Deprecated 🚧
 
-> This plugin is deprecated in favor of built-in possibilities of [Brunch], which can handle JavaScript automatically. For code validation use [eslint-brunch] or [jshint-brunch].
+> This plugin is deprecated in favor of built-in possibilities of [Brunch] (since `2.10`), which can handle JavaScript automatically. We recommend to remove it from `package.json`. For code validation use [eslint-brunch] or [jshint-brunch].
 
 # javascript-brunch
 
-Adds JavaScript support to [brunch]. It is mandatory plugin. It also does JS source code validation.
+Adds JavaScript support to [Brunch].
 
 ## Usage
 
